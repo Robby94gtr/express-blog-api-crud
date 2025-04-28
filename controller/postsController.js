@@ -7,7 +7,7 @@ function index(req, res){
     let postsFiltered = posts;
 
     if(tag){
-        postFiltered = posts.filter((post) => {
+        postsFiltered = posts.filter((post) => {
             return post.tags.includes(tag);
         })
     }
