@@ -1,9 +1,18 @@
 const posts = require('../data/posts.js')
  
-// index
-router.get('/', (req, res) => {
-    res.send('Lista dei post')
-})
+function index(req, res){
+    const tag = req.query.tag;
+
+    let postsFiltered = posts;
+
+    if(tag){
+        postFiltered = posts.filter((post) => {
+            return post.tags.includes(tag);
+        })
+    }
+
+    res.json(postsFiltered);
+}
  
 // show
 router.get('/:id', (req, res) => {
