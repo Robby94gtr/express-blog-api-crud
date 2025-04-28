@@ -1,5 +1,6 @@
 const posts = require('../data/posts.js')
- 
+
+// index
 function index(req, res){
     const tag = req.query.tag;
 
@@ -13,7 +14,8 @@ function index(req, res){
 
     res.json(postsFiltered);
 }
- 
+
+// show
 function show(req, res){
     const id = parseInt(req.params.id);
 
@@ -38,6 +40,12 @@ function modify(req, res){
 }
  
 // destroy
-router.delete('/:id', (req, res) => {
-    res.send(`Rimozione del post ${req.params.id}`)
-})
+function destroy(req, res){
+    const id = parseInt(req.params.id);
+
+    const post = posts.find(post => post.id === id);
+
+    posts.splice(posts.indexOf(post), 1);
+
+    res.sendStatus(204);
+}
