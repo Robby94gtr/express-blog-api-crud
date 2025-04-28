@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
     res.send('Server del mio blog')
 })
  
+const routerPosts = require('./router/postsRouter.js');
+ 
+app.use ('/posts', routerPosts);
+
 app.listen(port, () => {
     console.log(`Server in ascolto alla porta ${port}`);
 })
