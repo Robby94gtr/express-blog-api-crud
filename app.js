@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static('public'));
  
 app.get('/', (req, res) => {
-    res.send('Homepage Posts')
+    res.send('Server del mio blog')
 })
  
 app.listen(port, () => {
