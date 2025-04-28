@@ -23,19 +23,19 @@ function show(req, res){
 }
  
 // store
-router.post('/', (req, res) => {
-    res.send('Inserimento del nuovo post')
-})
+function store(req, res){
+    res.send('Inserimento del nuovo post');
+}
  
 // update
-router.put('/:id', (req, res) => {
-    res.send('Modifica totale del post' + req.params.id)
-})
+function update(req, res){
+    res.send(`Modifica totale del post ${req.params.id}`);
+}
 
 // modify
-router.patch('/:id', (req, res) => {
-    res.send(`Modifica parziale del post ${req.params.id}`)
-})
+function modify(req, res){
+    res.send(`Modifica totale del post ${req.params.id}`);
+}
  
 // destroy
 router.delete('/:id', (req, res) => {
