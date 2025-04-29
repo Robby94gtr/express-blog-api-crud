@@ -27,7 +27,7 @@ function show(req, res){
 // store
 function store(req, res){
     // definizione dell'id dell'elemento da inserire
-    const newId = menu[menu.lenght -1].id +1;
+    const newId = posts[posts.length -1].id +1;
 
     // creo il nuovo oggetto da inserire nell'array
     const postsNew = {
@@ -37,6 +37,13 @@ function store(req, res){
        image: req.body.image,
        tags: req.body.tags
     }
+    // pusho il nuovo oggetto da inserire nell'array
+    posts.push(postsNew);
+ 
+    // restituisco lo stato
+    res.status(201);
+    res.json(postsNew);
+    console.log(posts); 
 }
  
 // update
