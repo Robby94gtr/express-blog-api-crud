@@ -28,6 +28,15 @@ function show(req, res){
 function store(req, res){
     // definizione dell'id dell'elemento da inserire
     const newId = menu[menu.lenght -1].id +1;
+
+    // creo il nuovo oggetto da inserire nell'array
+    const postsNew = {
+       id: newId,
+       title: req.body.title,
+       content: req.body.content,
+       image: req.body.image,
+       tags: req.body.tags
+    }
 }
  
 // update
