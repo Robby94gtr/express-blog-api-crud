@@ -53,6 +53,13 @@ function update(req, res){
  
     // assegno ad una nuova variabile il valore dell'id precedentemente dichiarato per recuperare lo specifico post
     const post = posts.find(post => post.id === id);
+
+
+    // modifico i valori delle proprietà
+    post.title = req.body.title,
+    post.content = req.body.content,
+    post.image = req.body.image,
+    post.tags = req.body.tags;
 }
 
 // modify
