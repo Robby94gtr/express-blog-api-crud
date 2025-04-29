@@ -7,6 +7,9 @@ const app = express();
 // definisco il numero di porta
 const port = 3000;
 
+// indico ad express di trattare il body delle richieste come .json
+app.use(express.json());
+
 // definisco use per richiamare gli asset statici nella cartella public
 app.use(express.static('public'));
 
