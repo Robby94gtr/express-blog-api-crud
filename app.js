@@ -15,6 +15,7 @@ app.use(express.static('public'));
 
 // importazione e registrazione del middleware
 const notFound = require('./middleware/notFound.js')
+const errorHandler = require('./middleware/errorHandler.js');
 
 // definisco la rotta base dell'app 
 app.get('/', (req, res) => {
@@ -29,6 +30,7 @@ app.use ('/posts', postsRouter);
 
 // utilizzo delle funzioni middleware inserite dopo le rotte
 app.use(notFound);
+app.use(errorHandler);
 
 
 // imposto il server in ascolto sulla porta stabilita
