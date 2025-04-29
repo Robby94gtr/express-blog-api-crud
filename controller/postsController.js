@@ -60,6 +60,11 @@ function update(req, res){
     post.content = req.body.content,
     post.image = req.body.image,
     post.tags = req.body.tags;
+
+    // restituisco il json
+    res.json(posts);
+ 
+    console.log(posts);
 }
 
 // modify
