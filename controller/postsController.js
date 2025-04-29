@@ -26,7 +26,8 @@ function show(req, res){
  
 // store
 function store(req, res){
-    res.send('Inserimento del nuovo post');
+    // definizione dell'id dell'elemento da inserire
+    const newId = menu[menu.lenght -1].id +1;
 }
  
 // update
