@@ -48,12 +48,16 @@ function store(req, res){
  
 // update
 function update(req, res){
-    res.send(`Modifica totale del post ${req.params.id}`);
+    // recupero il valore del parametro dinamico in una variabile
+    const id = parseInt(req.params.id);
+ 
+    // assegno ad una nuova variabile il valore dell'id precedentemente dichiarato per recuperare lo specifico post
+    const post = posts.find(post => post.id === id);
 }
 
 // modify
 function modify(req, res){
-    res.send(`Modifica totale del post ${req.params.id}`);
+    res.send(`Modifica parziale del post ${req.params.id}`);
 }
  
 // destroy
